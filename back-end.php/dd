@@ -1,0 +1,9 @@
+CREATE TABLE tasks (  
+    id INT AUTO_INCREMENT PRIMARY KEY,  
+    user_id INT,
+    title varchar(256),  
+    description varchar(500),  
+    status ENUM('pending', 'completed') DEFAULT 'pending',  
+    created_at DATETIME,  
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE  
+);  
